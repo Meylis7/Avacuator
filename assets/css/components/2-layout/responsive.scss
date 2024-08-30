@@ -1,0 +1,260 @@
+// 1600 ========================
+@include xlg-xxxlg {
+
+    // Evacuator ==========
+    .evacuator {
+        &_item {
+            &-photo {
+                width: rem(350);
+            }
+
+            &-info {
+                width: calc(75% - rem(350));
+            }
+
+            &-data {
+                width: 25%;
+            }
+        }
+    }
+}
+
+// 1300 ========================
+@include xlg-xxlg {
+
+    // Header =============
+    .header {
+        .nav {
+            margin-right: 0;
+
+            &_item {
+                margin-right: rem(35);
+            }
+        }
+    }
+
+    // Call ===============
+    .call {
+        &_title {
+            font-size: rem(30);
+        }
+    }
+
+    // Evacuator ==========
+    .evacuator {
+        &_item {
+            &-block {
+                flex-wrap: wrap;
+                row-gap: rem(28);
+            }
+
+            &-photo {
+                width: rem(350);
+                min-width: calc(50% - rem(28));
+            }
+
+            &-info {
+                width: calc(100% - rem(28));
+                order: 1;
+            }
+
+            &-data {
+                width: 50%;
+            }
+        }
+    }
+}
+
+// 1024 ======================
+@include lg-xlg {
+    .auto_container {
+        padding: 0 30px;
+    }
+
+    // Evacuator ==========
+    .evacuator {
+        &_item {
+            &-txt {
+                text-align: center;
+            }
+
+            &-block {
+                flex-direction: column;
+                row-gap: rem(28);
+                column-gap: 0;
+            }
+
+            &-photo {
+                width: 100%;
+                height: rem(420);
+                min-width: 100%;
+
+                img {
+                    @include ImgCon;
+                    // object-position: unset;
+                }
+            }
+
+            &-info {
+                width: 100%;
+                order: unset;
+            }
+
+            &-data {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// 900 ========================
+@include lg-lg {
+
+    // Headear ===============
+    .header {
+        padding: rem(15) 0;
+
+        .burger {
+            display: block;
+            cursor: pointer;
+            width: rem(50);
+            height: rem(50);
+
+            svg {
+                @include ImgCon;
+            }
+        }
+
+        &_group {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            z-index: 40;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(5px);
+
+            border-radius: rem(50) 0 0 rem(50);
+            @include transition;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            &.active {
+                right: 0;
+                border-radius: 0;
+
+                .mobile_view {
+                    border-radius: 0;
+                }
+            }
+        }
+
+        .mobile_view {
+            background: #fff;
+            width: 70%;
+            height: 100%;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: rem(50) 0 0 rem(50);
+
+        }
+
+        .nav {
+            &_list {
+                flex-direction: column;
+            }
+
+            &_item {
+                margin: 0 0 rem(60);
+            }
+
+            &_link {
+                font-size: rem(24);
+            }
+        }
+
+        .add_advert {
+            font-size: rem(24);
+        }
+    }
+}
+
+// 650 =======================
+@include md-sm {
+    .auto_container {
+        padding: 0 20px;
+    }
+
+    // Header ==============
+    .header {
+        &_logo {
+            width: rem(90);
+            height: rem(90);
+        }
+
+        .burger {
+            width: rem(40);
+            height: rem(40);
+        }
+    }
+
+    // Call ==============
+    .call {
+        min-height: rem(80);
+
+        &_title {
+            font-size: rem(22);
+        }
+    }
+
+    // Evacuator =================
+    .evacuator {
+        padding: rem(40) 0;
+
+        &_item {
+            padding: rem(20) rem(28);
+            text-align: center;
+
+            &-title {
+                font-size: rem(24);
+            }
+
+            &-photo {
+                height: unset;
+            }
+
+            &-info {
+                &-row {
+                    flex-direction: column;
+                }
+
+                &-title {
+                    margin: 0 0 10px;
+                }
+            }
+
+            &-data {
+                &-address {
+                    h6 {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+
+    // Paginaiton ======================
+    .pag {
+        &_list {
+            column-gap: rem(10);
+        }
+
+        &_link {
+            font-size: rem(20);
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
